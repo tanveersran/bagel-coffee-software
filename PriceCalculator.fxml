@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="661.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx_project.PriceCalculatorController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6f2e32" height="566.0" layoutY="91.0" stroke="BLACK" strokeType="INSIDE" width="7.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fff2c9" height="566.0" layoutX="5.0" layoutY="87.0" stroke="BLACK" strokeType="INSIDE" width="661.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6f2e32" height="62.0" layoutX="-4.0" layoutY="30.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" width="668.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="262.0" layoutX="345.0" layoutY="300.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="OUTSIDE" width="315.0" />
+      <Label layoutX="37.0" layoutY="123.0" prefHeight="25.0" prefWidth="71.0" text="Bagels">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Line endX="-33.0" layoutX="143.0" layoutY="160.0" startX="-105.0" stroke="#6f2e32" />
+      <Spinner fx:id="whiteSpinner" editable="true" layoutX="181.0" layoutY="178.0" prefHeight="1.0" prefWidth="60.0" />
+      <Spinner fx:id="wholeWheatSpinner" editable="true" layoutX="181.0" layoutY="212.0" prefHeight="1.0" prefWidth="60.0" />
+      <Label layoutX="416.0" layoutY="120.0" prefHeight="25.0" prefWidth="71.0" text="Coffee">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Line endX="-33.0" layoutX="521.0" layoutY="152.0" startX="-105.0" stroke="#6f2e32" />
+      <Spinner fx:id="regularSpinner" editable="true" layoutX="565.0" layoutY="162.0" prefHeight="1.0" prefWidth="60.0" />
+      <Spinner fx:id="cappucinoSpinner" editable="true" layoutX="565.0" layoutY="195.0" prefHeight="1.0" prefWidth="60.0" />
+      <Spinner fx:id="cafeSpinner" editable="true" layoutX="565.0" layoutY="228.0" prefHeight="1.0" prefWidth="60.0" />
+      <Label layoutX="37.0" layoutY="290.0" prefHeight="27.0" prefWidth="83.0" text="Toppings">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Line endX="-6.0" layoutX="143.0" layoutY="326.0" startX="-105.0" stroke="#6f2e32" />
+      <CheckBox fx:id="cbCreamCheese" layoutX="35.0" layoutY="341.0" mnemonicParsing="false" onAction="#toppingsSelected" text="Cream Cheese ($0.50)" />
+      <CheckBox fx:id="cbButter" layoutX="35.0" layoutY="369.0" mnemonicParsing="false" onAction="#toppingsSelected" text="Butter ($0.75)" />
+      <CheckBox fx:id="cbBlueberry" layoutX="35.0" layoutY="397.0" mnemonicParsing="false" onAction="#toppingsSelected" text="Blueberry Jam ($0.75)" />
+      <CheckBox fx:id="cbRaspberry" layoutX="36.0" layoutY="425.0" mnemonicParsing="false" onAction="#toppingsSelected" text="Raspberry Jam ($0.75)" />
+      <CheckBox fx:id="cbPeachJelly" layoutX="36.0" layoutY="453.0" mnemonicParsing="false" onAction="#toppingsSelected" text="Peach Jelly ($0.75)" />
+      <Label layoutX="435.0" layoutY="328.0" prefHeight="27.0" prefWidth="158.0" text="Cost Breakdown">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Line endX="-6.0" layoutX="558.0" layoutY="365.0" startX="-105.0" stroke="#6f2e32" />
+      <Label layoutX="390.0" layoutY="383.0" text="Subtotal" />
+      <Label fx:id="labelSubtotal" layoutX="560.0" layoutY="383.0" text="\$0.00" />
+      <Label layoutX="390.0" layoutY="415.0" text="Sales Tax (13%)" />
+      <Label fx:id="labelSalesTax" layoutX="561.0" layoutY="415.0" text="\$0.00" />
+      <Label layoutX="390.0" layoutY="447.0" text="Total Sale" />
+      <Label fx:id="labelTotal" layoutX="560.0" layoutY="447.0" text="\$0.00" />
+      <Button fx:id="btnCalculate" layoutX="442.0" layoutY="484.0" mnemonicParsing="false" onAction="#btnCalculate_Click" prefHeight="25.0" prefWidth="116.0" text="Calculate Total" />
+      <Button fx:id="resetButton" layoutX="336.0" layoutY="600.0" mnemonicParsing="false" onAction="#btnReset_Click" text="Reset Form" />
+      <Button fx:id="exitButton" layoutX="241.0" layoutY="600.0" mnemonicParsing="false" onAction="#btnExit_Click" text="Exit System" />
+      <Label fx:id="coffeeError" layoutX="388.0" layoutY="273.0" opacity="0.0" text="**You must select a bagel before ordering coffee" textFill="#ff1515" />
+      <CheckBox fx:id="cbWhite" layoutX="32.0" layoutY="182.0" mnemonicParsing="false" onAction="#bagelSelected" text="White ($1.25)" />
+      <CheckBox fx:id="cbWholeWheat" layoutX="32.0" layoutY="218.0" mnemonicParsing="false" onAction="#bagelSelected" text="Whole Wheat ($1.50)" />
+      <CheckBox fx:id="cbRegular" layoutX="416.0" layoutY="169.0" mnemonicParsing="false" onAction="#coffeeSelected" text="Regular ($1.25)" />
+      <CheckBox fx:id="cbCappucino" layoutX="417.0" layoutY="199.0" mnemonicParsing="false" onAction="#coffeeSelected" text="Cappucino ($2.00)" />
+      <CheckBox fx:id="cbCafe" layoutX="416.0" layoutY="231.0" mnemonicParsing="false" onAction="#coffeeSelected" text="Café au lait ($1.75)" />
+      <CheckBox fx:id="cbNoneCoffee" layoutX="548.0" layoutY="125.0" mnemonicParsing="false" onAction="#noneSelected" text="None" />
+      <CheckBox fx:id="cbNoneBagel" layoutX="129.0" layoutY="125.0" mnemonicParsing="false" onAction="#noneSelected" text="None" />
+      <Label layoutX="195.0" layoutY="43.0" text="Sheridan Bagel House" textFill="WHITE">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnPrint" layoutX="377.0" layoutY="517.0" mnemonicParsing="false" onAction="#btnPrint_Click" text="PrintReceiptPrinter" />
+      <Button fx:id="btnSave" layoutX="507.0" layoutY="517.0" mnemonicParsing="false" onAction="#btnSave_Click" prefHeight="25.0" prefWidth="116.0" text="PrintReceiptFile" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6f2e32" height="566.0" layoutX="655.0" layoutY="93.0" stroke="BLACK" strokeType="INSIDE" width="7.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6f2e32" height="7.0" layoutX="3.0" layoutY="651.0" stroke="BLACK" strokeType="INSIDE" width="661.0" />
+      <MenuBar layoutX="-3.0" layoutY="2.0" prefHeight="26.0" prefWidth="661.0">
+        <menus>
+          <Menu fx:id="closeMenu" mnemonicParsing="false" onAction="#btnExit_Click" text="Window">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu fx:id="printMenu" mnemonicParsing="false" text="Print">
+            <items>
+                  <MenuItem fx:id="saveReceipt" mnemonicParsing="false" onAction="#btnSave_Click" text="Save Receipt" />
+              <MenuItem fx:id="printReceipt" mnemonicParsing="false" onAction="#btnPrint_Click" text="Print Receipt" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Functions">
+              <items>
+                <MenuItem fx:id="calculateMenu" mnemonicParsing="false" onAction="#btnCalculate_Click" text="Calculate" />
+                  <MenuItem fx:id="resetFormMenu" mnemonicParsing="false" onAction="#btnReset_Click" text="Reset Form" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

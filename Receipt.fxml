@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="530.0" prefWidth="289.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx_project.RecieptController">
+   <children>
+      <Text layoutX="35.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sheridan Bagel House" wrappingWidth="228.02734375">
+         <font>
+            <Font name="Monospaced Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="63.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thank you for visiting!">
+         <font>
+            <Font name="Monospaced Regular" size="12.0" />
+         </font>
+      </Text>
+      <Line endX="114.0" layoutX="147.0" layoutY="91.0" startX="-121.0" />
+      <Text layoutX="71.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RECEIPT #: ">
+         <font>
+            <Font name="Monospaced Regular" size="17.0" />
+         </font>
+      </Text>
+      <Text layoutX="27.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Order:">
+         <font>
+            <Font name="Monospaced Bold" size="12.0" />
+         </font>
+      </Text>
+      <Label fx:id="itemsLabel" alignment="TOP_LEFT" graphicTextGap="8.0" layoutX="22.0" layoutY="180.0" prefHeight="219.0" prefWidth="201.0" text="Item Name and Qty">
+         <font>
+            <Font name="Monospaced Regular" size="12.0" />
+         </font></Label>
+      <Label fx:id="receiptNoLabel" layoutX="183.0" layoutY="106.0" text="0" />
+      <Line endX="118.0" layoutX="149.0" layoutY="405.0" startX="-127.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="28.0" layoutX="24.0" layoutY="446.0" stroke="BLACK" strokeType="INSIDE" width="243.0" />
+      <Text fill="WHITE" layoutX="32.0" layoutY="464.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL:">
+         <font>
+            <Font name="Monospaced Bold" size="17.0" />
+         </font>
+      </Text>
+      <Label fx:id="totalCostLabel" alignment="CENTER_RIGHT" layoutX="101.0" layoutY="449.0" prefHeight="20.0" prefWidth="158.0" text="11" textFill="WHITE">
+         <font>
+            <Font name="Monospaced Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="96.0" layoutY="484.0" text="Generated On:">
+         <font>
+            <Font name="Monospaced Regular" size="12.0" />
+         </font></Label>
+      <Label fx:id="dateLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="80.0" layoutY="499.0" prefHeight="17.0" prefWidth="121.0" text="Date" />
+      <Label fx:id="costLabel" alignment="TOP_RIGHT" graphicTextGap="8.0" layoutX="215.0" layoutY="180.0" prefHeight="219.0" prefWidth="61.0" text="Cost" wrapText="true">
+         <font>
+            <Font name="Monospaced Regular" size="12.0" />
+         </font></Label>
+      <Text layoutX="22.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Subtotal:">
+         <font>
+            <Font name="Monospaced Regular" size="12.0" />
+         </font>
+      </Text>
+      <Line endX="118.0" layoutX="150.0" layoutY="136.0" startX="-127.0" />
+      <Text layoutX="22.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tax:">
+         <font>
+            <Font name="Monospaced Regular" size="12.0" />
+         </font>
+      </Text>
+      <Label fx:id="costBreakdownLabel" alignment="TOP_RIGHT" graphicTextGap="8.0" layoutX="223.0" layoutY="407.0" prefHeight="38.0" prefWidth="46.0" text="Cost brkdown" wrapText="true">
+         <font>
+            <Font name="Monospaced Regular" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
